@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Finishing({clickNext4}) {
+export default function Finishing({clickNext4, isChecked, toggleYearly, isArcadeClicked, isAdvanceClicked, isProClicked, toggleClick1, toggleClick2, toggleClick3}) {
   return (
     <div className="top w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
@@ -13,7 +13,11 @@ export default function Finishing({clickNext4}) {
                 <div className="w-[27rem] h-[12rem] bg-[#ecf3fd] border-solid border-gray-400 border-[1px] rounded-xl" type="text">
                     <div className="top w-full h-[5rem] flex justify-between px-2 pt-2">
                         <div className="left flex flex-col">
-                            <h1>Arcade(Yearly)</h1>
+                            <h1>
+                                {!isArcadeClicked && isAdvanceClicked && isProClicked && "Arcade(Yearly)"}
+                                {!isAdvanceClicked && isArcadeClicked && isProClicked && "Advanced(Yearly)"}
+                                {!isProClicked && isAdvanceClicked && isArcadeClicked && "Pro(Yearly)"}
+                                </h1>
                             <p className="underline text-gray-400">Change</p>
                         </div>
                         <div className="right">

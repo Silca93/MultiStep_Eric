@@ -13,7 +13,6 @@ export default function Mains({textMatch, emailMatch, phoneMatch, email, phone, 
 
     const [page, setPage] = useState("YourInfo")
     
-
     let clickNext = () => {
         setPage("Plan")
     }
@@ -29,20 +28,45 @@ export default function Mains({textMatch, emailMatch, phoneMatch, email, phone, 
 
     let clickBack = () => {
         setPage("YourInfo")
-    }   
+    }  
+//useState for the Monthyl/Yearly toggle//
+    const [isChecked, setIsChecked] = useState(true)
+
+    const toggleYearly = () => {
+        setIsChecked(!isChecked);
+      };
+
+//useSate for arcade //
+    const [isArcadeClicked, setIsArcadeClicked] = useState(true)  
+
+    const toggleClick1 = () => {
+        setIsArcadeClicked(!isArcadeClicked)
+    }
+//usestate for advanced/
+    const [isAdvanceClicked, setIsAdvanceClicked] = useState(true)  
+
+    const toggleClick2 = () => {
+        setIsAdvanceClicked(!isAdvanceClicked)
+    }
+//usestate for pro//
+    const [isProClicked, setIsProClicked] = useState(true)  
+
+    const toggleClick3 = () => {
+        setIsProClicked(!isProClicked)
+    }
 
 
   return (
     <div className="w-dvw h-dvh bg-[#ecf3fd] flex justify-center items-center">
-        <div className="w-[50rem] h-[70%] rounded-lg flex">
-            <div className="left w-[15rem] h-full bg-[#fffffe] rounded-l-xl flex flex-col justify-center items-center">
+        <div className="w-[50rem] h-[70%] rounded-xl flex">
+            <div className="left w-[15rem] h-full bg-[#fffffe] rounded-l-3xl flex flex-col justify-center items-center">
                 <Sidebar/>
             </div>
-            <div className="right w-[35rem] h-full bg-[#fffffe] rounded-r-xl relative flex flex-col pt-8">
+            <div className="right w-[35rem] h-full bg-[#fffffe] rounded-r-3xl relative flex flex-col pt-8">
                 {page == "YourInfo" && <YourInfo textMatch={textMatch} emailMatch={emailMatch} phoneMatch={phoneMatch} text={text} phone={phone} email={email} page={page} clickNext={clickNext}/>}
-                {page == "Plan" && <Plan arcade={arcade} advanced={advanced} pro={pro} page={page} clickNext2={clickNext2} clickBack={clickBack}/> }
+                {page == "Plan" && <Plan arcade={arcade} advanced={advanced} pro={pro} page={page} clickNext2={clickNext2} clickBack={clickBack} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked} toggleClick2={toggleClick2} toggleClick3={toggleClick3} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked}/> }
                 {page == "Addon" && <Addon page={page} clickNext3={clickNext3}/> }
-                {page == "Finishing" && <Finishing page={page} clickNext4={clickNext4} />}
+                {page == "Finishing" && <Finishing page={page} clickNext4={clickNext4} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked}  toggleClick2={toggleClick2} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked} toggleClick3={toggleClick3} />}
                 {page == "Thankyou" && <Thankyou thx={thx} page={page}  /> }
                 
                 
