@@ -6,6 +6,7 @@ import './App.css'
 import arcade from './assets/images/icon-arcade.svg'
 import advanced from './assets/images/icon-advanced.svg'
 import pro from './assets/images/icon-pro.svg'
+import thx from './assets/images/icon-thank-you.svg'
 
 function App() {
   const [text, setText] = useState("")
@@ -29,7 +30,7 @@ function App() {
   
   return (
     <div className="">
-    <Main textMatch={textMatch} emailMatch={emailMatch} phoneMatch={phoneMatch} text={text} email={email} phone={phone} arcade={arcade} advanced={advanced} pro={pro}/>
+    <Main textMatch={textMatch} emailMatch={emailMatch} phoneMatch={phoneMatch} text={text} email={email} phone={phone} arcade={arcade} advanced={advanced} pro={pro} thx={thx}/>
      
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Addon() {
+export default function Addon({clickNext3}) {
   return (
     <div className="w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
@@ -43,6 +43,8 @@ export default function Addon() {
                 </div>
                
             </div>
+
+            <button onClick={() => clickNext3()} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button>
 
         </div>
     </div>

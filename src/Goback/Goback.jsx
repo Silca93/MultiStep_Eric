@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Goback() {
+export default function Goback({clickBack}) {
   return (
     <div>
-        <button className="text-[#04264f]">Go Back</button>
+        <button onClick={() => clickBack()} className="text-[#04264f]">Go Back</button>
     </div>
   )
 }
