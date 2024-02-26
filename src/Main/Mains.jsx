@@ -23,6 +23,9 @@ export default function Mains({textMatch, emailMatch, phoneMatch, email, phone, 
     let clickNext3 = () => {
         setPage("Finishing")
     }
+    let clickNext4 = () => {
+        setPage("Thankyou")
+    }
 
     let clickBack = () => {
         setPage("YourInfo")
@@ -36,17 +39,15 @@ export default function Mains({textMatch, emailMatch, phoneMatch, email, phone, 
                 <Sidebar/>
             </div>
             <div className="right w-[35rem] h-full bg-[#fffffe] rounded-r-xl relative flex flex-col pt-8">
-                {/* {page == "YourInfo" && <YourInfo textMatch={textMatch} emailMatch={emailMatch} phoneMatch={phoneMatch} text={text} phone={phone} email={email} page={page} clickNext={clickNext}/>}
+                {page == "YourInfo" && <YourInfo textMatch={textMatch} emailMatch={emailMatch} phoneMatch={phoneMatch} text={text} phone={phone} email={email} page={page} clickNext={clickNext}/>}
                 {page == "Plan" && <Plan arcade={arcade} advanced={advanced} pro={pro} page={page} clickNext2={clickNext2} clickBack={clickBack}/> }
-                {page == "Addon" && <Addon clickNext3={clickNext3}/> }
-                {page == "Finishing" && <Finishing/>} */}
-                <Thankyou thx={thx} />
+                {page == "Addon" && <Addon page={page} clickNext3={clickNext3}/> }
+                {page == "Finishing" && <Finishing page={page} clickNext4={clickNext4} />}
+                {page == "Thankyou" && <Thankyou thx={thx} page={page}  /> }
                 
                 
                 {/* <button onClick={() => clickNext()} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button> */}
                 <Goback clickBack={clickBack}/>
-
-               
 
             </div>
             <div>
