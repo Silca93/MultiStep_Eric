@@ -1,0 +1,11 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 900;
+
+}
+
+.Sidebar {
+    background-image: url(./../src/assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
