@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Pagecontent({textMatch, emailMatch, phoneMatch, phone, email, text}) {
+export default function YourInfo({textMatch, emailMatch, phoneMatch, phone, email, text}) {
   return (
     <div className="w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
