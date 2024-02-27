@@ -56,6 +56,26 @@ export default function Mains({textMatch, emailMatch, phoneMatch, email, phone, 
     }
 
 
+    // usestate for online option check//
+    const [isOnlineChecked, setIsOnlineChecked] = useState(true)
+
+  
+    const toggleOnline = () => {
+        setIsOnlineChecked(!isOnlineChecked);
+        console.log(isOnlineChecked);
+    };
+
+    const [isProfileChecked, setIsProfileChecked] = useState(true)
+
+  
+    const toggleProfile = () => {
+        setIsProfileChecked(!isProfileChecked);
+        console.log(isProfileChecked);
+    };
+
+
+
+
   return (
     <div className="w-dvw h-dvh bg-[#ecf3fd] flex justify-center items-center">
         <div className="w-[50rem] h-[70%] rounded-xl flex">
@@ -65,8 +85,8 @@ export default function Mains({textMatch, emailMatch, phoneMatch, email, phone, 
             <div className="right w-[35rem] h-full bg-[#fffffe] rounded-r-3xl relative flex flex-col pt-8">
                 {page == "YourInfo" && <YourInfo textMatch={textMatch} emailMatch={emailMatch} phoneMatch={phoneMatch} text={text} phone={phone} email={email} page={page} clickNext={clickNext}/>}
                 {page == "Plan" && <Plan arcade={arcade} advanced={advanced} pro={pro} page={page} clickNext2={clickNext2} clickBack={clickBack} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked} toggleClick2={toggleClick2} toggleClick3={toggleClick3} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked}/> }
-                {page == "Addon" && <Addon page={page} clickNext3={clickNext3}/> }
-                {page == "Finishing" && <Finishing page={page} clickNext4={clickNext4} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked}  toggleClick2={toggleClick2} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked} toggleClick3={toggleClick3} />}
+                {page == "Addon" && <Addon page={page} clickNext3={clickNext3} isOnlineChecked={isOnlineChecked} toggleOnline={toggleOnline} isProfileChecked={isProfileChecked} toggleProfile={toggleProfile}/> }
+                {page == "Finishing" && <Finishing page={page} clickNext4={clickNext4} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked}  toggleClick2={toggleClick2} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked} toggleClick3={toggleClick3} isOnlineChecked={isOnlineChecked} toggleOnline={toggleOnline} isProfileChecked={isProfileChecked} toggleProfile={toggleProfile} />}
                 {page == "Thankyou" && <Thankyou thx={thx} page={page}  /> }
                 
                 

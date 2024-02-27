@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Finishing({clickNext4, isChecked, toggleYearly, isArcadeClicked, isAdvanceClicked, isProClicked, toggleClick1, toggleClick2, toggleClick3}) {
+export default function Finishing({clickNext4, isChecked, toggleYearly, isArcadeClicked, isAdvanceClicked, isProClicked, isOnlineChecked, isProfileChecked, toggleClick1, toggleClick2, toggleClick3, toggleOnline, toggleProfile}) {
   return (
     <div className="top w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
@@ -21,7 +21,10 @@ export default function Finishing({clickNext4, isChecked, toggleYearly, isArcade
                             <p className="underline text-gray-400">Change</p>
                         </div>
                         <div className="right">
-                            $90/yr
+                            {!isArcadeClicked && isAdvanceClicked && isProClicked && "$90"}
+                            {!isAdvanceClicked && isArcadeClicked && isProClicked && "$120"}
+                            {!isProClicked && isAdvanceClicked && isArcadeClicked && "$150"}                                
+                            
                         </div>
 
                     </div>
@@ -32,7 +35,7 @@ export default function Finishing({clickNext4, isChecked, toggleYearly, isArcade
                             <h1>Online Service</h1>
                         </div>
                         <div className="right">
-                            +$10/yr
+                           {!isOnlineChecked ? "+$10/yr" : "0"} 
                         </div>
 
                       </div>
@@ -41,7 +44,8 @@ export default function Finishing({clickNext4, isChecked, toggleYearly, isArcade
                             <h1>Customizable Profile</h1>
                         </div>
                         <div className="right">
-                            +$20/yr
+                            {!isProfileChecked ? "+$20/yr" : "+0$"}
+                            
                         </div>
                       </div>
                     </div>
@@ -51,7 +55,64 @@ export default function Finishing({clickNext4, isChecked, toggleYearly, isArcade
                             <h1>Total per year</h1>
                         </div>
                         <div className="right text-[1.5rem] text-blue-400">
-                            +$120/yr
+
+                        {!isArcadeClicked && isAdvanceClicked && isProClicked && !isOnlineChecked && !isProfileChecked && "$120"}
+                        {!isArcadeClicked && isAdvanceClicked && isProClicked && !isOnlineChecked && isProfileChecked && "$100"}
+                        {!isArcadeClicked && isAdvanceClicked && isProClicked && isOnlineChecked && "$110"}
+                        {isArcadeClicked ? "" : (!isArcadeClicked && !isProClicked && !isOnlineChecked && !isProfileChecked ? "$90" : null)}
+
+                        
+                        {!isAdvanceClicked && isArcadeClicked && isProClicked && !isOnlineChecked && !isProfileChecked && "$150"}
+                        {!isAdvanceClicked && isArcadeClicked && isProClicked && !isOnlineChecked && isProfileChecked && "$130"}
+                        {!isAdvanceClicked && isArcadeClicked && isProClicked && isOnlineChecked && "$140"}
+                        {isAdvanceClicked ? "" : (!isArcadeClicked && !isProClicked && !isOnlineChecked && !isProfileChecked ? "$120" : null)}
+                                                            
+                        {!isProClicked && isArcadeClicked && isAdvanceClicked && !isOnlineChecked && !isProfileChecked && "$180"}
+                        {!isProClicked && isArcadeClicked && isAdvanceClicked && !isOnlineChecked && isProfileChecked && "$160"}
+                        {!isProClicked && isArcadeClicked && isAdvanceClicked && isOnlineChecked && "$170"}
+                        {isProClicked ? "" : (!isArcadeClicked && !isProClicked && !isOnlineChecked && !isProfileChecked ? "$150" : null)}
+
+
+                        
+                        {/* {
+                        !isAdvanceClicked && isArcadeClicked && isProClicked ? (
+                            "$120"
+                        ) : (
+                            !isProfileChecked && !isOnlineChecked ? (
+                            "$150"
+                            ) : !isOnlineChecked ? (
+                            "$130"
+                            ) : !isProfileChecked ? (
+                            "$1140"
+                            ) : (
+                            "120"
+                            )
+                        )
+                        } */}
+
+
+                        {/* {
+                        !isProClicked && !isAdvanceClicked && !isArcadeClicked ? (
+                            "$150"
+                        ) : (
+                            !isProfileChecked && !isOnlineChecked ? (
+                            "$180"
+                            ) : !isOnlineChecked ? (
+                            "$160"
+                            ) : !isProfileChecked ? (
+                            "$170"
+                            ) : (
+                            "150"
+                            )
+                        )
+                        } */}
+
+
+
+
+                        
+                            
+                            
                         </div>
                 </div>
             </div>
