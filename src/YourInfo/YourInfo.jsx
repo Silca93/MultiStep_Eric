@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function YourInfo({textMatch, emailMatch, phoneMatch, phone, email, text, clickNext}) {
+export default function YourInfo({textMatch, emailMatch, phoneMatch, phone, email, text, clickNext, switchColor, pageCircleColor}) {
   return (
     <div className="w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
@@ -22,7 +22,7 @@ export default function YourInfo({textMatch, emailMatch, phoneMatch, phone, emai
             </div>
 
         </div>
-        <button onClick={() => {text.length&&email.length&&phone.length >= 1? clickNext() :"" }} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button>
+        <button onClick={() => {(text.length&&email.length&&phone.length >= 1? clickNext() :"" ), switchColor()}} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button>
     </div>
   )
 }
