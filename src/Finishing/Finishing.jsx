@@ -130,16 +130,18 @@ export default function Finishing({clickNext4, clickNext, isChecked, toggleYearl
                             {!isProClicked && isAdvanceClicked && isArcadeClicked && proPrice}                                
                             
                         </div>
-
                     </div>
                     <hr/>
                     <div className="bot w-full h-[8rem]">
                       <div className="top w-full h-[3rem] flex justify-between px-2 pt-2">
-                        <div className="left flex flex-col">
+                        <div className="left flex flex-col gap-2">
                             <h1>Online Service</h1>
+                            {/* <h1>heyhey</h1> */}
                         </div>
                         <div className="right">
-                           {!isOnlineChecked ? "+$10/yr" : "0"} 
+                           {!isOnlineChecked && isChecked && "+$1/mo"} 
+                           {!isOnlineChecked && !isChecked && "+$10/yr"} 
+                           {isOnlineChecked &&  "$0"} 
                         </div>
 
                       </div>
@@ -148,7 +150,10 @@ export default function Finishing({clickNext4, clickNext, isChecked, toggleYearl
                             <h1>Customizable Profile</h1>
                         </div>
                         <div className="right">
-                            {!isProfileChecked ? "+$20/yr" : "+0$"}
+                            {!isProfileChecked && isChecked && "+$2/mo"}
+                            {!isProfileChecked && !isChecked && "+$20/yr"}
+                            {isProfileChecked && "$0"}
+
                             
                         </div>
                       </div>
@@ -156,7 +161,10 @@ export default function Finishing({clickNext4, clickNext, isChecked, toggleYearl
                 </div>  
                 <div className="bot w-full h-[3rem] flex justify-between px-2 pt-2">
                         <div className="left flex flex-col">
-                            <h1>Total per year</h1>
+                            <h1>
+                                {isChecked && "Total per month"}
+                                {!isChecked && "Total per year"}
+                            </h1>
                         </div>
                         <div className="right text-[1.5rem] text-blue-400">
 
