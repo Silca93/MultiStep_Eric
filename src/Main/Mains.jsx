@@ -86,13 +86,14 @@ export default function Mains({textMatch, emailMatch, phoneMatch, email, phone, 
             <div className="right w-[35rem] h-full bg-[#fffffe] rounded-r-3xl relative flex flex-col pt-8">
                 {page == "YourInfo" && <YourInfo textMatch={textMatch} emailMatch={emailMatch} phoneMatch={phoneMatch} text={text} phone={phone} email={email} page={page} clickNext={clickNext}/>}
                 {page == "Plan" && <Plan arcade={arcade} advanced={advanced} pro={pro} page={page} clickNext2={clickNext2} clickBack={clickBack} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked} toggleClick2={toggleClick2} toggleClick3={toggleClick3} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked}/> }
-                {page == "Addon" && <Addon page={page} clickNext3={clickNext3} isOnlineChecked={isOnlineChecked} toggleOnline={toggleOnline} isProfileChecked={isProfileChecked} toggleProfile={toggleProfile} text={text}/> }
-                {page == "Finishing" && <Finishing page={page} clickNext4={clickNext4} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked}  toggleClick2={toggleClick2} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked} toggleClick3={toggleClick3} isOnlineChecked={isOnlineChecked} toggleOnline={toggleOnline} isProfileChecked={isProfileChecked} toggleProfile={toggleProfile} text={text}/>}
+                {page == "Addon" && <Addon page={page} clickNext3={clickNext3} clickNext={clickNext} isOnlineChecked={isOnlineChecked} toggleOnline={toggleOnline} isProfileChecked={isProfileChecked} toggleProfile={toggleProfile} text={text}/> }
+                {page == "Finishing" && <Finishing page={page} clickNext4={clickNext4} clickNext={clickNext} toggleYearly={toggleYearly} isChecked={isChecked} toggleClick1={toggleClick1} isArcadeClicked={isArcadeClicked}  toggleClick2={toggleClick2} isAdvanceClicked={isAdvanceClicked} isProClicked={isProClicked} toggleClick3={toggleClick3} isOnlineChecked={isOnlineChecked} toggleOnline={toggleOnline} isProfileChecked={isProfileChecked} toggleProfile={toggleProfile} text={text}/>}
                 {page == "Thankyou" && <Thankyou thx={thx} page={page}  /> }
                 
                 
                 {/* <button onClick={() => clickNext()} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button> */}
-                <Goback clickBack={clickBack}/>
+                {page == "YourInfo"   ? "" : page == "Thankyou" ? "" : <Goback clickBack={clickBack}/>}
+                
 
             </div>
             <div>

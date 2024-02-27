@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Addon({text, clickNext3, toggleOnline, toggleProfile, isOnlineChecked, isProfileChecked}) {
+export default function Addon({text, clickNext3, toggleOnline, toggleProfile, isOnlineChecked, isProfileChecked, clickNext}) {
   return (
     <div className="w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
@@ -10,9 +10,9 @@ export default function Addon({text, clickNext3, toggleOnline, toggleProfile, is
         <div className="field w-full h-[30rem] flex flex-col justify-start items-start pl-[4rem]  gap-4">
             <div className="name flex flex-col gap-2">
 
-            <label  className="w-[27rem] h-[4rem] border-solid border-gray-400 border-[1px] rounded-xl flex flex-col relative hover:ring-1 hover:ring-purple-600 cursor-pointer" htmlFor="onlineServiceCheckbox">
-                 <input onClick={() => toggleOnline()} id="onlineServiceCheckbox" className="absolute left-2 top-6 accent-purple-600" type="checkbox" unchecked="unchecked" />
-                 <div  className="flex flex-col ml-9 justify-center pt-2">
+            <label  className="w-[27rem] h-[4rem] border-solid border-gray-400 border-[1px] rounded-xl flex flex-col relative hover:ring-1 hover:ring-purple-600 cursor-pointer " htmlFor="onlineServiceCheckbox" tabIndex="0">
+                 <input onClick={() => toggleOnline()} id="onlineServiceCheckbox" className="absolute left-2 top-6 accent-purple-600 focus:bg-gray-200 focus:ring-purple-600 focus:ring-2" type="checkbox" unchecked="unchecked" tabIndex="0" />
+                 <div  className="flex flex-col ml-9 justify-center pt-2 focus:bg-gray-200 focus:ring-purple-600 focus:ring-2" tabIndex="0">
                     <h1 className="text-[#04264f]">Online Service</h1>
                     <p className="text-gray-400">Access to multiplayer Games</p>
                  </div>
@@ -21,7 +21,7 @@ export default function Addon({text, clickNext3, toggleOnline, toggleProfile, is
 
             </div>
             <div className="email flex flex-col gap-2">
-            <label className="w-[27rem] h-[4rem] border-solid border-gray-400 border-[1px] rounded-xl flex flex-col relative hover:ring-1 hover:ring-purple-600 cursor-pointer" htmlFor="cloudStorageCheckbox">
+            <label className="w-[27rem] h-[4rem] border-solid border-gray-400 border-[1px] rounded-xl flex flex-col relative hover:ring-1 hover:ring-purple-600 focus:bg-gray-200 focus:ring-purple-600 focus:ring-2 cursor-pointer" htmlFor="cloudStorageCheckbox" tabIndex="0">
                  <input  id="cloudStorageCheckbox" className="absolute left-2 top-6 accent-purple-600" type="checkbox" unchecked="unchecked" />
                  <div className="flex flex-col ml-9 justify-center pt-2">
                     <h1 className="text-[#04264f]">Larger storage</h1>

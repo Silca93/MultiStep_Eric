@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Finishing({clickNext4, isChecked, toggleYearly, isArcadeClicked, isAdvanceClicked, isProClicked, isOnlineChecked, isProfileChecked, toggleClick1, toggleClick2, toggleClick3, toggleOnline, toggleProfile}) {
+export default function Finishing({clickNext4, clickNext, isChecked, toggleYearly, isArcadeClicked, isAdvanceClicked, isProClicked, isOnlineChecked, isProfileChecked, toggleClick1, toggleClick2, toggleClick3, toggleOnline, toggleProfile}) {
 
     let price = 120;
     if (isChecked) {
@@ -54,6 +54,57 @@ export default function Finishing({clickNext4, isChecked, toggleYearly, isArcade
        price12 = price12/10;
     }
 
+    let arc; 
+    if (isChecked) {
+        arc = "Arcade(Monthly)"
+
+    }else {
+        arc = "Arcade(Yearly)"
+    }
+
+    let arcPrice; 
+
+    if (isChecked) {
+        arcPrice = "$9"
+
+    }else {
+        arcPrice = "$90"
+    }
+
+    let adv; 
+    if (isChecked) {
+        adv = "Advanced(Monthly)"
+
+    }else {
+        adv = "Advanced(Yearly)"
+    }
+
+    let advPrice; 
+
+    if (isChecked) {
+        advPrice = "$12"
+
+    }else {
+        advPrice = "$120"
+    }
+
+    let pro; 
+    if (isChecked) {
+        pro = "Pro(Monthly)"
+
+    }else {
+        pro = "Pro(Yearly)"
+    }
+
+    let proPrice; 
+
+    if (isChecked) {
+        proPrice = "$15"
+
+    }else {
+        proPrice = "$150"
+    }
+
   return (
     <div className="top w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
@@ -67,16 +118,16 @@ export default function Finishing({clickNext4, isChecked, toggleYearly, isArcade
                     <div className="top w-full h-[5rem] flex justify-between px-2 pt-2">
                         <div className="left flex flex-col">
                             <h1>
-                                {!isArcadeClicked && isAdvanceClicked && isProClicked && "Arcade(Yearly)"}
-                                {!isAdvanceClicked && isArcadeClicked && isProClicked && "Advanced(Yearly)"}
-                                {!isProClicked && isAdvanceClicked && isArcadeClicked && "Pro(Yearly)"}
+                                {!isArcadeClicked && isAdvanceClicked && isProClicked && arc}
+                                {!isAdvanceClicked && isArcadeClicked && isProClicked && adv}
+                                {!isProClicked && isAdvanceClicked && isArcadeClicked && pro}
                                 </h1>
-                            <p className="underline text-gray-400">Change</p>
+                            <p onClick={() => clickNext()} className="underline cursor-pointer text-gray-400">Change</p>
                         </div>
                         <div className="right">
-                            {!isArcadeClicked && isAdvanceClicked && isProClicked && "$90"}
-                            {!isAdvanceClicked && isArcadeClicked && isProClicked && "$120"}
-                            {!isProClicked && isAdvanceClicked && isArcadeClicked && "$150"}                                
+                            {!isArcadeClicked && isAdvanceClicked && isProClicked && arcPrice}
+                            {!isAdvanceClicked && isArcadeClicked && isProClicked && advPrice}
+                            {!isProClicked && isAdvanceClicked && isArcadeClicked && proPrice}                                
                             
                         </div>
 
