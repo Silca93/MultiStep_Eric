@@ -16,8 +16,9 @@ function App() {
  
  let textMatch = (e) => {
     setText(e.target.value)
-
+    
   }
+
  let emailMatch = (e) => {
     setEmail(e.target.value)
 

@@ -1,6 +1,59 @@
 import React from 'react'
 
 export default function Finishing({clickNext4, isChecked, toggleYearly, isArcadeClicked, isAdvanceClicked, isProClicked, isOnlineChecked, isProfileChecked, toggleClick1, toggleClick2, toggleClick3, toggleOnline, toggleProfile}) {
+
+    let price = 120;
+    if (isChecked) {
+       price = price/10;
+    }
+
+    let price2 = 100;
+    if (isChecked) {
+       price2 = price2/10;
+    }
+    let price3 = 110;
+    if (isChecked) {
+       price3 = price3/10;
+    }
+    let price4 = 90;
+    if (isChecked) {
+       price4 = price4/10;
+    }
+    let price5 = 150;
+    if (isChecked) {
+       price5 = price5/10;
+    }
+
+    let price6 = 130;
+    if (isChecked) {
+       price6 = price6/10;
+    }
+    let price7 = 140;
+    if (isChecked) {
+       price7 = price7/10;
+    }
+    let price8 = 120;
+    if (isChecked) {
+       price8 = price8/10;
+    }
+    let price9 = 180;
+    if (isChecked) {
+       price9 = price9/10;
+    }
+
+    let price10 = 160;
+    if (isChecked) {
+       price10 = price10/10;
+    }
+    let price11 = 170;
+    if (isChecked) {
+       price11 = price11/10;
+    }
+    let price12 = 150;
+    if (isChecked) {
+       price12 = price12/10;
+    }
+
   return (
     <div className="top w-full h-[25rem] flex flex-col gap-5 rounded-t-xl">
         <div className="title w-full h-[7rem] flex  flex-col justify-center items-start pl-[4rem]">
@@ -56,67 +109,27 @@ export default function Finishing({clickNext4, isChecked, toggleYearly, isArcade
                         </div>
                         <div className="right text-[1.5rem] text-blue-400">
 
-                        {!isArcadeClicked && isAdvanceClicked && isProClicked && !isOnlineChecked && !isProfileChecked && "$120"}
-                        {!isArcadeClicked && isAdvanceClicked && isProClicked && !isOnlineChecked && isProfileChecked && "$100"}
-                        {!isArcadeClicked && isAdvanceClicked && isProClicked && isOnlineChecked && "$110"}
+                        {!isArcadeClicked && isAdvanceClicked && isProClicked && !isOnlineChecked && !isProfileChecked && price + "$"}
+                        {!isArcadeClicked && isAdvanceClicked && isProClicked && !isOnlineChecked && isProfileChecked && price2 + "$"}
+                        {!isArcadeClicked && isAdvanceClicked && isProClicked && isOnlineChecked && !isProfileChecked && price3 + "$"}
+                        {!isArcadeClicked && isAdvanceClicked && isProClicked && isOnlineChecked && isProfileChecked && price4 + "$"}
                         {isArcadeClicked ? "" : (!isArcadeClicked && !isProClicked && !isOnlineChecked && !isProfileChecked ? "$90" : null)}
 
-                        
-                        {!isAdvanceClicked && isArcadeClicked && isProClicked && !isOnlineChecked && !isProfileChecked && "$150"}
-                        {!isAdvanceClicked && isArcadeClicked && isProClicked && !isOnlineChecked && isProfileChecked && "$130"}
-                        {!isAdvanceClicked && isArcadeClicked && isProClicked && isOnlineChecked && "$140"}
+                        {!isAdvanceClicked && isArcadeClicked && isProClicked && !isOnlineChecked && !isProfileChecked && price5 + "$"}
+                        {!isAdvanceClicked && isArcadeClicked && isProClicked && !isOnlineChecked && isProfileChecked && price6 + "$" }
+                        {!isAdvanceClicked && isArcadeClicked && isProClicked && isOnlineChecked && !isProfileChecked && price7 + "$"}
+                        {!isAdvanceClicked && isArcadeClicked && isProClicked && isOnlineChecked && isProfileChecked && price8 + "$"}
                         {isAdvanceClicked ? "" : (!isArcadeClicked && !isProClicked && !isOnlineChecked && !isProfileChecked ? "$120" : null)}
                                                             
-                        {!isProClicked && isArcadeClicked && isAdvanceClicked && !isOnlineChecked && !isProfileChecked && "$180"}
-                        {!isProClicked && isArcadeClicked && isAdvanceClicked && !isOnlineChecked && isProfileChecked && "$160"}
-                        {!isProClicked && isArcadeClicked && isAdvanceClicked && isOnlineChecked && "$170"}
+                        {!isProClicked && isArcadeClicked && isAdvanceClicked && !isOnlineChecked && !isProfileChecked && price9 + "$"}
+                        {!isProClicked && isArcadeClicked && isAdvanceClicked && !isOnlineChecked && isProfileChecked && price10 + "$"}
+                        {!isProClicked && isArcadeClicked && isAdvanceClicked && isOnlineChecked && !isProfileChecked && price11 + "$"}
+                        {!isProClicked && isArcadeClicked && isAdvanceClicked && isOnlineChecked && isProfileChecked && price12 + "$"}
                         {isProClicked ? "" : (!isArcadeClicked && !isProClicked && !isOnlineChecked && !isProfileChecked ? "$150" : null)}
-
-
-                        
-                        {/* {
-                        !isAdvanceClicked && isArcadeClicked && isProClicked ? (
-                            "$120"
-                        ) : (
-                            !isProfileChecked && !isOnlineChecked ? (
-                            "$150"
-                            ) : !isOnlineChecked ? (
-                            "$130"
-                            ) : !isProfileChecked ? (
-                            "$1140"
-                            ) : (
-                            "120"
-                            )
-                        )
-                        } */}
-
-
-                        {/* {
-                        !isProClicked && !isAdvanceClicked && !isArcadeClicked ? (
-                            "$150"
-                        ) : (
-                            !isProfileChecked && !isOnlineChecked ? (
-                            "$180"
-                            ) : !isOnlineChecked ? (
-                            "$160"
-                            ) : !isProfileChecked ? (
-                            "$170"
-                            ) : (
-                            "150"
-                            )
-                        )
-                        } */}
-
-
-
-
-                        
-                            
                             
                         </div>
                 </div>
             </div>
-
         </div>
         <button onClick={() => clickNext4()} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button>
     </div>

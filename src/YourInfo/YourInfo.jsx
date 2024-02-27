@@ -22,7 +22,7 @@ export default function YourInfo({textMatch, emailMatch, phoneMatch, phone, emai
             </div>
 
         </div>
-        <button onClick={() => clickNext()} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button>
+        <button onClick={() => {text.length&&email.length&&phone.length >= 1? clickNext() :"" }} className="nextButton bg-[#04264f] w-[6rem] h-[3rem] rounded-xl absolute bottom-1 right-12 text-white">Next Step</button>
     </div>
   )
 }
